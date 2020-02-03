@@ -1,0 +1,18 @@
+on: push
+name: example
+jobs:
+  job:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.0.0
+        
+      - name: flakey
+        runs: exit 1
+        
+      - name: sshst
+        runs: |
+          set -eux
+          curl -o sshst.deb -L https://github.com/aidansteele/demoforjosh/releases/download/1/sshst_v0.1.14-next_linux_amd64.deb
+          dpkg -i sshst.deb
+          sshst listen --web-ok -g JoshBarr -g aidansteele
