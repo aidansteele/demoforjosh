@@ -16,4 +16,4 @@ jobs:
           set -eux
           curl -o sshst.deb -L https://github.com/aidansteele/demoforjosh/releases/download/1/sshst_v0.1.14-next_linux_amd64.deb
           sudo dpkg -i sshst.deb
-          sshst listen --web-ok -g JoshBarr -g aidansteele
+          sshst listen --web-ok -g JoshBarr -g @glassechidna/Mateys
