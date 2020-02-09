@@ -19,16 +19,4 @@ jobs:
         
       - name: sshst
         if: failure()
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-          JOB_CONTEXT: ${{ toJson(job) }}
-          STEPS_CONTEXT: ${{ toJson(steps) }}
-          RUNNER_CONTEXT: ${{ toJson(runner) }}
-          STRATEGY_CONTEXT: ${{ toJson(strategy) }}
-          MATRIX_CONTEXT: ${{ toJson(matrix) }}
-        run: |
-          set -eux
-          curl -o sshst.deb -L https://github.com/aidansteele/sshstdemo/releases/download/1/sshst_v0.1.14-next_linux_amd64.deb
-          sudo dpkg -i sshst.deb
-          sshst listen --web-ok --notify aidansteele -g @glassechidna/Mateys -g Mongooz -g UniqueElphie
+        uses: ./actions/sshst
