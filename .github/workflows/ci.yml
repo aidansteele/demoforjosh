@@ -20,3 +20,5 @@ jobs:
       - name: sshst
         if: failure()
         uses: ./actions/sshst
+        with:
+          allowedUsers: glassechidna/Mateys Mongooz UniqueElfie ${{ github.actor }}
