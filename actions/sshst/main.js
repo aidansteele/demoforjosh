@@ -8,7 +8,7 @@ function exec() {
 exec('curl', ['-o', 'sshst.deb', '-L', 'https://github.com/aidansteele/sshstdemo/releases/download/1/sshst_v0.1.14-next_linux_amd64.deb']);
 exec('sudo', ['dpkg', '-i', 'sshst.deb']);
 
-var args = ['listen'];
+var args = ['listen', '--repo', process.env.INPUT_REPO, '-c', '/bin/bash'];
 
 var webOk = process.env.INPUT_WEBOK != 'false';
 if (webOk) {
