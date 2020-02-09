@@ -5,6 +5,10 @@ inputs:
     description: Whether users are allowed to connect via the web terminal at ssh.st
     default: "true"
     required: true
+  repo:
+    description: Name of repo - used in push notification title
+    default: ${{ github.repository }}
+    required: true
   notify:
     description: Which users - if any - should receive a push notification on launch
     default: ${{ github.actor }}
