@@ -22,8 +22,8 @@ if (notify.length > 0) {
 
 var allowedJoined = "" + process.env.INPUT_ALLOWEDUSERS;
 var allowed = allowedJoined.split(/[ ,]+/).filter(Boolean); // removes empties
-for (var user in allowed) {
-  args.push('-g', user);
+for (var idx = 0; idx < allowed.length; idx++) {
+  args.push('-g', allowed[idx]);
 }
 
 exec('sshst', args);
