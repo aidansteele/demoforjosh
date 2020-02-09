@@ -1,0 +1,18 @@
+name: ssh.st debugger
+description: Debug your workflows
+inputs:
+  webOk:
+    description: Whether users are allowed to connect via the web terminal at ssh.st
+    default: "true"
+    required: true
+  notify:
+    description: Which users - if any - should receive a push notification on launch
+    default: ${{ github.actor }}
+    required: true
+  allowedUsers:
+    description: Which users and teams are allowed to connect to this SSH listener
+    default: ${{ github.actor }}
+    required: true
+runs:
+  using: node12
+  image: main.js
