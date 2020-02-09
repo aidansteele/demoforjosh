@@ -23,6 +23,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -eux
-          curl -o sshst.deb -L https://github.com/aidansteele/demoforjosh/releases/download/1/sshst_v0.1.14-next_linux_amd64.deb
+          curl -o sshst.deb -L https://github.com/aidansteele/sshstdemo/releases/download/1/sshst_v0.1.14-next_linux_amd64.deb
           sudo dpkg -i sshst.deb
-          sshst listen --web-ok -g @glassechidna/Mateys -g Mongooz -g UniqueElphie
+          sshst listen --web-ok --notify aidansteele -g @glassechidna/Mateys -g Mongooz -g UniqueElphie
