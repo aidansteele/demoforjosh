@@ -22,8 +22,5 @@ jobs:
       - name: sshst
         if: failure()
         uses: ./actions/sshst
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DEPLOY: ${{ github.event.deployment.id }}
         with:
           allowedUsers: glassechidna/Mateys Mongooz UniqueElfie ${{ github.actor }}
